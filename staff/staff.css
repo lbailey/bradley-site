@@ -1,0 +1,307 @@
+﻿#memberLink{height:18px!important;}
+.prevMember{font-size:12px!important;}
+.nextMember{font-size:12px!important;}
+
+#container {
+    width: 1200px;
+    height: 600px;
+}
+
+#list-container {
+    overflow: hidden;
+    width: 1370px;
+    float: left;
+}
+
+.list {
+    background: white;
+    float: left;
+    height: 620px;
+}
+
+
+#arrowR {
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: -3%;
+    top: 50%;
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+#arrowL {
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: -3%;
+    top: 50%;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.item {
+    background: white;
+    width: 312px;
+    height: 600px;
+    float: left;
+    position: relative;
+}
+
+.firstitem {
+    background: white;
+    width: 1420px;
+    height: 620px;
+    float: left;
+    position: relative;
+}
+
+.itembox {
+    background: white;
+    width: 305px;
+    height: 300px;
+    margin: 10px 50px 10px 0;
+    float: left;
+    position: relative;
+}
+
+.firstname {
+    text-transform: uppercase;
+    color: #284779;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2em;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.lastname {
+    text-transform: uppercase;
+    color: #616161;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a.firstname:hover {
+    text-decoration: none;
+    color: #284779 !important;
+}
+
+a.lastname:hover {
+    text-decoration: none;
+    color: #616161 !important;
+}
+
+.quote {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h5.stafftitle {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+@media(min-width:1200px){
+.list {
+    min-width: 3000px;
+
+}
+}
+
+
+@media (min-width:1024px) and (max-width:1199px) {
+	#container {
+    width: 1200px;
+    height: 600px;
+}
+
+#list-container {
+    overflow: hidden;
+    width: 940px;
+    float: left;
+}
+
+.list {
+    background: white;
+    float: left;
+    height: 620px;
+	min-width: 3000px;
+}
+
+
+#arrowR {
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: -1%;
+    top: 50%;
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+#arrowL {
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: -1%;
+    top: 50%;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.item {
+    background: white;
+    width: 612px;
+    height: 600px;
+    float: left;
+    position: relative;
+}
+
+.firstitem {
+    background: white;
+    width: 1260px;
+    height: 620px;
+    float: left;
+    position: relative;
+}
+
+.itembox {
+    background: white;
+    width: 305px;
+    height: 300px;
+    margin: 10px 10px 10px 0;
+    float: left;
+    position: relative;
+}
+	
+}
+
+
+
+
+@media (max-width: 991px) {
+	#container{width:720px;}
+	
+	#list-container {
+    overflow: hidden;
+    width: 720px;
+    float: left;
+}
+	
+	.itembox{margin:10px 27px 10px 27px!important;}
+	
+	.list {
+    background: white;
+    float: left;
+    height: auto;
+}
+	.item{width:720px;height:320px;}
+	
+	.firstitem {
+    background: white;
+    width: 720px;
+    height: 1280px;
+    float: left;
+    position: relative;
+}
+	
+	#arrowR {
+ display:none!important;
+}
+
+
+#arrowL {
+ display:none!important;
+}
+	
+	
+}
+
+
+@media (max-width: 767px) {
+	#container{width:100%;}
+	
+	#list-container {
+    overflow: hidden;
+    width: 665px;
+    float: left;
+}
+	
+	.itembox{margin:10px 12px 10px 12px!important;}
+	
+	.list {
+    background: white;
+    float: left;
+		width:100%;
+    height: auto;
+}
+	.item{width:720px;height:320px;}
+	
+	.firstitem {
+    background: white;
+    width: 660px;
+    height: 1280px;
+    float: left;
+    position: relative;
+}
+	
+	#arrowR {
+ display:none!important;
+}
+
+
+#arrowL {
+ display:none!important;
+}
+	
+	
+}
+
+@media (max-width: 479px) {
+	#list-container {
+    overflow: hidden;
+    width: 100%;
+    float: left;
+}
+	
+	.list {
+    background: white;
+    float: left;
+    height: auto;
+		
+}
+	.item{min-height:680px!important;width:100%;}
+	
+	
+	.firstitem {
+    background: white;
+    width: 100%;
+    height: 2760px;
+    float: left;
+    position: relative;
+}
+	.itembox{margin:0 0 25px 0!important;width:100%!important;}
+	#arrowR {
+ display:none!important;
+}
+
+
+#arrowL {
+ display:none!important;
+}
+	
+	
+}
+
+/* iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+	
+	.firstitem{width:100%;}
+	.itembox{margin:0 0 25px 0!important;width:100%;}
+
+}
