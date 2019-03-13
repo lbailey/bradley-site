@@ -1,17 +1,210 @@
-/* Add here all your CSS customizations */
-img.responsive{max-width:100%;height:auto;}
-body{ text-align: justify;
-    text-justify: inter-word;}
-a:hover{color:#666;text-decoration: none;}
+/* 
+ *
+ * Bradley Site Design
+ * 1.0.0
+ *
+ */
+
+img .responsive{
+	max-width:100%;
+	height:auto;
+}
+
+body{ 
+	text-align: justify;
+  text-justify: inter-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:'Oswald', sans-serif;
+	text-transform: uppercase;
+	color: #284779;
+	font-weight: bolder;
+}
+
+h3, h4, h5, h6 {
+	letter-spacing: .3pt;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h5 {
+	color:#bdbdbd;
+	margin:5px 0;
+}
+
+h3 {
+	margin:20px 0 10px 0!important;
+}
+
+a {
+	color: #284779;
+}
+
+a:hover, a:focus {
+	color:#777;
+	text-decoration: none;
+}
 
 .RadMenuPopup .rmSlide{z-index:999!important;}
-.logoBradley {
+
+.bsd-logo {
   width: 598px;
   height: 58px;
   background: url("/images/common/logo.jpg") no-repeat!important;
 }
- .logoBradley span{
+
+.bsd-logo span {
   display: none!important;
+}
+
+/* Header */
+
+#header {
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+
+html.sticky-header-active #header .header-body {
+	position: fixed;
+  border-bottom-width: 15px;
+  border-bottom-color: rgba(40, 71, 121, 1);
+  padding-top: 10px;
+  border-top: 0;
+}
+
+#header .mobile-nav {
+  display: none;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+/* Theme Columns */
+.col,   
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12
+.col-auto, 
+.col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, 
+.col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, 
+.col-lg-10, .col-lg-11, .col-lg-12, 
+.col-lg-auto, 
+.col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, 
+.col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, 
+.col-md-10, .col-md-11, .col-md-12, 
+.col-md-auto, 
+.col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, 
+.col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, 
+.col-sm-10, .col-sm-11, .col-sm-12,
+.col-sm-auto, 
+.col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, 
+.col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, 
+.col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto {
+	float: left;
+}
+
+/* Projects */
+
+div.project-focus  {
+	padding: 0;
+	/*overflow: hidden;*/
+	height: 475px;
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+  width: 40px;
+  height: 40px;
+  display: block;
+  top: 50%;
+  border-radius: 5px;
+  border-color: rgb(186, 186, 186, 0);
+}
+
+.left-arrow::before,
+.right-arrow::before {
+	font-family: "revicons";
+  font-size: 15px;
+  color: #fff;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+}
+
+div.project-focus > #left-arrow,
+.left-arrow {
+  margin-left: 5%;
+  z-index: 999;
+}
+
+.left-arrow::before {
+  content: '\e824';
+}
+
+.right-arrow::before {
+  content: '\e825';
+}
+
+div.project-focus > #right-arrow,
+.right-arrow {
+  right: 0;
+}
+
+div.project-focus img {
+	float: right;
+  width: 95%;
+  object-fit: cover;
+  height: 475px;
+}
+
+h1.project-title {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+h5.project-detail {
+  position: absolute;
+  text-align: right;
+  right: 0;
+  padding-right: 5pt;
+}
+
+h5.project-title {
+  max-width: 146px;
+  text-align: center;
+}
+
+/* Images */
+
+.slick-slide img {
+  display: block;
+  object-fit: cover;
+  height: 119px;
+  width: 98%;
+}
+
+img.project-large {
+	width: 100%!important;
+	height: auto!important;
+	margin-top: 15px;
+	object-fit: cover;
+}
+
+
+/* Footer */
+
+#footer {
+  border-top: 15px solid #284779;
+  /*font-size: 1em;*/
+  margin: 30px 0;
+}
+
+#footer .footer-copyright {
+  background: #fff;
+  padding-top: 30px;
 }
 
 #memberLink{height:21px!important;}
@@ -52,16 +245,9 @@ z-index:999;}
 
 .RadMenu .rmHorizontal .rmText{padding-right:0!important}
 .col-md-6.align-bottom{padding:0 15px!important;}
-.col-md-8{padding:0!important;}
 .projectdetailsidebar{padding-right:0!important;}
 
-
-h1, h2, h3, h4, h6 {font-family:'Oswald', sans-serif;text-transform:uppercase;color:#284779;font-weight:bolder;}
-h5{color:#BDBDBD;font-family:'Oswald', sans-serif;text-transform:uppercase;font-weight:bolder;margin:5px 0;}
-h3{margin:20px 0 10px 0!important;}
-
 #column1-wrap .col-md-4{padding-left:0!important;}
-.col-md-8.categorymainimage{padding-left:10px!important;}
 .col-md-12 .col-md-12{padding-left:0!important;}
 
 .col-md-12.propertyImages{padding-right:0!important;}
@@ -125,7 +311,6 @@ h3{margin:20px 0 10px 0!important;}
 	border-radius:6px;
 }
 
-
 #projectArrowLdi {
 
     position: absolute;
@@ -138,8 +323,6 @@ h3{margin:20px 0 10px 0!important;}
 
 #column1{width:400px;}
 #column2{margin-top:0;}
-
-#titleoverimage{position:absolute;top:5px;left:66%;z-index:999;text-transform: uppercase;color:#fff;font-family:'Oswald', sans-serif;font-weight:bolder;width:300px;text-align:right;}
 
 .projectname{font-family:'Oswald', sans-serif;text-transform:uppercase;color:#284779;font-weight:bolder;font-size:3em;}
 .projectlocation{color:#BDBDBD;font-family:'Oswald', sans-serif;text-transform:uppercase;font-weight:bolder;font-size:1em;}
@@ -157,8 +340,6 @@ h3{margin:20px 0 10px 0!important;}
 
 #gallery-t-group .rsThumb{width:146px!important;height:146px!important;}
 #gallery-t-group .rsThumbs{height:146px!important;margin-bottom:25px!important;}
-
-/*.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{padding-left:0!important;padding-right:0!important;}
 
 .row{margin-left:0!important;margin-right:0!important;}*/
 
@@ -178,18 +359,9 @@ top:87%;
 
 
 
-#header .mobile-nav {
-    display: none;
-    padding-top: 10px;
-    padding-left: 10px;
-}
 
-.categorymainimage img {
-		float: right;
-    width: 100%;
-    object-fit: cover;
-    height: 475px;
-}
+
+
 
 /* Header Nav Main Mobile */
 
@@ -224,7 +396,7 @@ top:87%;
 }
 }
 @media (min-width:1024px) and (max-width:1200px){
-	 .logoBradley {
+	 bsd-logo {
   width: 325px;
   height: 50px;
   background: url("/images/common/logo-icon.jpg") no-repeat!important;
@@ -251,11 +423,10 @@ top:87%;
 		width:100%!important;
 		height:auto!important;
 		}
-	.col-md-8.categorymainimage{padding-left:0!important;width:100%;margin-top:20px;}
+	.col-md-8.project-focus{padding-left:0!important;width:100%;margin-top:20px;}
 	#titleoverimage{top:28px;left:65%}
 #titleoversummary{display:none;}
 
-#mainImage{width:100%!important;height:auto!important;margin-top:15px;}
 	.col-md-5.categoryname{margin-top:18px!important;}
 	.col-md-7.projectnamediv{text-align:left!important;}
 	.col-md-12.propertyImages{margin:15px 0!important;}
@@ -292,7 +463,7 @@ top:87%;
 
 @media (min-width:992px) and (max-width:1023px){
 	img.responsivehalf{width:50%;float:right;}
-	 .logoBradley {
+	 bsd-logo {
   width: 325px;
   height: 50px;
   background: url("/images/common/logo-icon.jpg") no-repeat!important;
@@ -376,7 +547,7 @@ top:87%;
 		width:720px!important;
 		height:auto!important;
 		margin-top:20px;}
-	.col-md-8.categorymainimage{padding-left:0!important;}
+	.col-md-8.project-focus{padding-left:0!important;}
 	#titleoverimage{top:28px;left:55%}
 #titleoversummary{display:none;}
 .projectcategorydetail{text-align:left!important;font-size:18px!important;}
@@ -404,7 +575,7 @@ top:87%;
 	.col-md-2{width:10%;float:left;}
 	.col-md-5 img{width:100%;}
 	
-	.school-title{width:96%!important;max-width:96%!important;}
+	.project-title{width:96%!important;max-width:96%!important;}
 	
     .page-header h2 {
         color: white;
@@ -514,7 +685,7 @@ top:87%;
 	@media (min-width: 480px) and (max-width:766px) {
 	
 	html.sticky-header-active #header .header-body{position:relative;}
-.logoBradley {
+bsd-logo {
   width: 330px;
   height: 50px;
   background: url("/images/common/logo-icon.jpg") no-repeat!important;
@@ -535,7 +706,7 @@ top:87%;
 @media (max-width: 479px) {
 	
 	html.sticky-header-active #header .header-body{position:relative;}
-.logoBradley {
+bsd-logo {
   width: 300px;
   height: 46px;
   background: url("/images/common/logo-icon-phone.png") no-repeat!important;
@@ -591,7 +762,7 @@ z-index:999;}
 	.sliderProject .slick-list{width:100%!important;}
 	.sliderProject .slick-prev{display:none!important;}
 	.sliderProject .slick-next{display:none!important;}
-	.school-title{max-width:92%!important;}
+	.project-title{max-width:92%!important;}
 	
 	.slick-track{width:100%!important;margin-right:0!important;}
 	.slick-slide{width:50%!important;margin:0 0 20px 0;}
@@ -672,3 +843,4 @@ z-index:999;}
 
 
 .staffSummary{padding-bottom:10px}
+

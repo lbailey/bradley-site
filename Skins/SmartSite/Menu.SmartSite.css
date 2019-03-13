@@ -37,15 +37,15 @@
 }
 
     .RadMenu_SmartSite .rmRootGroup a.rmLink {
-        text-decoration: none;
+        /*text-decoration: none;
         background-image: none;
         padding: 8px 0px 0px 20px;
         margin-top: 0px;
+        text-decoration: none;*/
         color: #284779;
-        text-decoration: none;
-        font-size: 22px;
+        font-size: 1em;
         font-family: 'Oswald', sans-serif;
-        letter-spacing:2px;
+        letter-spacing:1pt;
         text-transform: uppercase
     }
 
