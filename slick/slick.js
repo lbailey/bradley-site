@@ -695,7 +695,7 @@
         if(!$target.is('li')) {
             $target = $target.closest('li');
         }
-
+        
         unevenOffset = (_.slideCount % _.options.slidesToScroll !== 0);
         indexOffset = unevenOffset ? 0 : (_.slideCount - _.currentSlide) % _.options.slidesToScroll;
 

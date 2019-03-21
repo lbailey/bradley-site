@@ -1,7 +1,7 @@
 /*
 Name: 			View - Contact
 Written by: 	Okler Themes - (http://www.okler.net)
-Version: 		4.5.1
+Theme Version:	7.2.0
 */
 
 (function($) {
@@ -9,62 +9,103 @@ Version: 		4.5.1
 	'use strict';
 
 	/*
+	Custom Rules
+	*/
+	
+	// No White Space
+	$.validator.addMethod("noSpace", function(value, element) {
+    	if( $(element).attr('required') ) {
+    		return value.search(/[a-z0-9]/i) == 0;
+    	}
+
+    	return true;
+	}, 'Please fill this empty field.');
+
+	/*
+	Assign Custom Rules on Fields
+	*/
+	$.validator.addClassRules({
+	    'form-control': {
+	        noSpace: true
+	    }
+	});
+
+	/*
 	Contact Form: Basic
 	*/
-	$('#contactForm:not([data-type=advanced])').validate({
-		submitHandler: function(form) {
+	$('.contact-form').each(function(){
+		$(this).validate({
+			submitHandler: function(form) {
 
-			var $form = $(form),
-				$messageSuccess = $('#contactSuccess'),
-				$messageError = $('#contactError'),
-				$submitButton = $(this.submitButton);
+				var $form = $(form),
+					$messageSuccess = $form.find('.contact-form-success'),
+					$messageError = $form.find('.contact-form-error'),
+					$submitButton = $(this.submitButton),
+					$errorMessage = $form.find('.mail-error-message'),
+					submitButtonText = $submitButton.val();
 
-			$submitButton.button('loading');
+				$submitButton.val( $submitButton.data('loading-text') ? $submitButton.data('loading-text') : 'Loading...' ).attr('disabled', true);
 
-			// Ajax Submit
-			$.ajax({
-				type: 'POST',
-				url: $form.attr('action'),
-				data: {
-					name: $form.find('#name').val(),
-					email: $form.find('#email').val(),
-					subject: $form.find('#subject').val(),
-					message: $form.find('#message').val()
-				},
-				dataType: 'json',
-				complete: function(data) {
-				
-					if (typeof data.responseJSON === 'object') {
-						if (data.responseJSON.response == 'success') {
+				// Fields Data
+				var formData = $form.serializeArray(),
+					data = {};
 
-							$messageSuccess.removeClass('hidden');
-							$messageError.addClass('hidden');
+				$(formData).each(function(index, obj){
+				    data[obj.name] = obj.value;
+				});
 
-							// Reset Form
-							$form.find('.form-control')
-								.val('')
-								.blur()
-								.parent()
-								.removeClass('has-success')
-								.removeClass('has-error')
-								.find('label.error')
-								.remove();
+				// Google Recaptcha
+				if( data["g-recaptcha-response"] != undefined ) {
+					data["g-recaptcha-response"] = $form.find('#g-recaptcha-response').val();
+				}
 
-							if (($messageSuccess.offset().top - 80) < $(window).scrollTop()) {
-								$('html, body').animate({
-									scrollTop: $messageSuccess.offset().top - 80
-								}, 300);
-							}
+				// Ajax Submit
+				$.ajax({
+					type: 'POST',
+					url: $form.attr('action'),
+					data: data
+				}).always(function(data, textStatus, jqXHR) {
 
-							$submitButton.button('reset');
-							
-							return;
+					$errorMessage.empty().hide();
 
+					if (data.response == 'success') {
+
+						// Uncomment the code below to redirect for a thank you page
+						// self.location = 'thank-you.html';
+
+						$messageSuccess.removeClass('d-none');
+						$messageError.addClass('d-none');
+
+						// Reset Form
+						$form.find('.form-control')
+							.val('')
+							.blur()
+							.parent()
+							.removeClass('has-success')
+							.removeClass('has-danger')
+							.find('label.error')
+							.remove();
+
+						if (($messageSuccess.offset().top - 80) < $(window).scrollTop()) {
+							$('html, body').animate({
+								scrollTop: $messageSuccess.offset().top - 80
+							}, 300);
 						}
+
+						$form.find('.form-control').removeClass('error');
+
+						$submitButton.val( submitButtonText ).attr('disabled', false);
+						
+						return;
+
+					} else if (data.response == 'error' && typeof data.errorMessage !== 'undefined') {
+						$errorMessage.html(data.errorMessage).show();
+					} else {
+						$errorMessage.html(data.responseText).show();
 					}
 
-					$messageError.removeClass('hidden');
-					$messageSuccess.addClass('hidden');
+					$messageError.removeClass('d-none');
+					$messageSuccess.addClass('d-none');
 
 					if (($messageError.offset().top - 80) < $(window).scrollTop()) {
 						$('html, body').animate({
@@ -75,17 +116,17 @@ Version: 		4.5.1
 					$form.find('.has-success')
 						.removeClass('has-success');
 						
-					$submitButton.button('reset');
+					$submitButton.val( submitButtonText ).attr('disabled', false);
 
-				}
-			});
-		}
+				});
+			}
+		});
 	});
 
 	/*
 	Contact Form: Advanced
 	*/
-	$('#contactFormAdvanced, #contactForm[data-type=advanced]').validate({
+	$('#contactFormAdvanced').validate({
 		onkeyup: false,
 		onclick: false,
 		onfocusout: false,
@@ -102,7 +143,7 @@ Version: 		4.5.1
 		},
 		errorPlacement: function(error, element) {
 			if (element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
-				error.appendTo(element.parent().parent());
+				error.appendTo(element.closest('.form-group'));
 			} else {
 				error.insertAfter(element);
 			}

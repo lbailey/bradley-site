@@ -20,7 +20,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -32,11 +32,6 @@
 	// Validations
 	if (typeof theme.PluginValidation !== 'undefined') {
 		theme.PluginValidation.initialize();
-	}
-
-	// Parallax
-	if (typeof theme.PluginParallax !== 'undefined') {
-		theme.PluginParallax.initialize();
 	}
 
 	// Match Height
@@ -62,11 +57,11 @@
 	if ($.isFunction($.fn['themePluginAnimate'])) {
 
 		$(function() {
-			$('[data-plugin-animate], [data-appear-animation]').each(function() {
+			$('[data-appear-animation]').each(function() {
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -90,7 +85,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -114,11 +109,35 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
 				$this.themePluginChartCircular(opts);
+			});
+		});
+
+	}
+
+}).apply(this, [jQuery]);
+
+// Countdown
+(function($) {
+
+	'use strict';
+
+	if ($.isFunction($.fn['themePluginCountdown'])) {
+
+		$(function() {
+			$('[data-plugin-countdown]:not(.manual), .countdown').each(function() {
+				var $this = $(this),
+					opts;
+
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+				if (pluginOptions)
+					opts = pluginOptions;
+
+				$this.themePluginCountdown(opts);
 			});
 		});
 
@@ -138,7 +157,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -146,6 +165,33 @@
 			});
 		});
 
+	}
+
+}).apply(this, [jQuery]);
+
+// Animated Icon
+(function($) {
+
+	'use strict';
+
+	if ($.isFunction($.fn['themePluginIcon'])) {
+
+		$(document).ready(function(){
+			$(function() {
+
+				$('[data-icon]').each(function() {
+					var $this = $(this),
+						opts;
+
+					var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+					if (pluginOptions)
+						opts = pluginOptions;
+
+					$this.themePluginIcon(opts);
+				});
+				
+			});
+		});
 	}
 
 }).apply(this, [jQuery]);
@@ -162,7 +208,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -186,7 +232,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -210,7 +256,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -234,11 +280,35 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
 				$this.themePluginMatchHeight(opts);
+			});
+		});
+
+	}
+
+}).apply(this, [jQuery]);
+
+// Parallax
+(function($) {
+
+	'use strict';
+
+	if ($.isFunction($.fn['themePluginParallax'])) {
+
+		$(function() {
+			$('[data-plugin-parallax]:not(.manual)').each(function() {
+				var $this = $(this),
+					opts;
+
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+				if (pluginOptions)
+					opts = pluginOptions;
+
+				$this.themePluginParallax(opts);
 			});
 		});
 
@@ -258,7 +328,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -282,11 +352,60 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
 				$this.themePluginRevolutionSlider(opts);
+			});
+		});
+
+	}
+
+}).apply(this, [jQuery]);
+
+// Scrollable
+(function($) {
+
+	'use strict';
+
+	if ( $.isFunction($.fn[ 'nanoScroller' ]) ) {
+
+		$(function() {
+			$('[data-plugin-scrollable]').each(function() {
+				var $this = $( this ),
+					opts = {};
+
+				var pluginOptions = $this.data('plugin-options');
+				if (pluginOptions) {
+					opts = pluginOptions;
+				}
+
+				$this.themePluginScrollable(opts);
+			});
+		});
+
+	}
+
+}).apply(this, [jQuery]);
+
+// Section Scroll
+(function($) {
+
+	'use strict';
+
+	if ($.isFunction($.fn['themePluginSectionScroll'])) {
+
+		$(function() {
+			$('[data-plugin-section-scroll]:not(.manual)').each(function() {
+				var $this = $(this),
+					opts;
+
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
+				if (pluginOptions)
+					opts = pluginOptions;
+
+				$this.themePluginSectionScroll(opts);
 			});
 		});
 
@@ -306,7 +425,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -330,7 +449,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -354,7 +473,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -378,7 +497,7 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
@@ -402,35 +521,11 @@
 				var $this = $(this),
 					opts;
 
-				var pluginOptions = $this.data('plugin-options');
+				var pluginOptions = theme.fn.getOptions($this.data('plugin-options'));
 				if (pluginOptions)
 					opts = pluginOptions;
 
 				$this.themePluginVideoBackground(opts);
-			});
-		});
-
-	}
-
-}).apply(this, [jQuery]);
-
-// Word Rotate
-(function($) {
-
-	'use strict';
-
-	if ($.isFunction($.fn['themePluginWordRotate'])) {
-
-		$(function() {
-			$('[data-plugin-word-rotate]:not(.manual), .word-rotate:not(.manual)').each(function() {
-				var $this = $(this),
-					opts;
-
-				var pluginOptions = $this.data('plugin-options');
-				if (pluginOptions)
-					opts = pluginOptions;
-
-				$this.themePluginWordRotate(opts);
 			});
 		});
 
