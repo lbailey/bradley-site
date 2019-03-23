@@ -5,18 +5,5 @@ ErrorDocument 401 /400.html
 ErrorDocument 402 /400.html
 ErrorDocument 403 /400.html
 ErrorDocument 404 /400.html
-ErrorDocument 405 /400.html
-ErrorDocument 406 /400.html
-ErrorDocument 407 /400.html
 
 ErrorDocument 500 /500.html
-ErrorDocument 501 /500.html
-ErrorDocument 502 /500.html
-ErrorDocument 503 /500.html
-ErrorDocument 504 /500.html
-ErrorDocument 505 /500.html
-ErrorDocument 506 /500.html
-ErrorDocument 507 /500.html
-ErrorDocument 508 /500.html
-ErrorDocument 509 /500.html
-ErrorDocument 510 /500.html
