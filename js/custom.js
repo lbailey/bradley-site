@@ -25,8 +25,8 @@ function init_slick_ovrvw_lg() {
   	fade: true,
   	lazyLoad: 'ondemand',
   	cssEase: 'linear',
-    nextArrow: '<button class="right-arrow"></button>',
-    prevArrow: '<button class="left-arrow"></button>',
+    nextArrow: '<div class="right-arrow"></div>',
+    prevArrow: '<div class="left-arrow"></div>',
 	});
 }
 
@@ -46,6 +46,12 @@ function init_slick_ovrvw_tms() {
 							 infinite: true
 					 }
 			 },{
+					 breakpoint: 450,
+					 settings: {
+							 slidesToShow: 3,
+							 infinite: true
+					 }
+			 },{
 					 breakpoint: 300,
 					 settings: "unslick" // destroys slick
 			 }]
@@ -58,8 +64,8 @@ function init_slick_indv_lg() {
   	speed: 200,
   	fade: true,
   	cssEase: 'linear',
-    nextArrow: '<button class="right-arrow"></button>',
-    prevArrow: '<button class="left-arrow"></button>',
+    nextArrow: '<div class="right-arrow"></div>',
+    prevArrow: '<div class="left-arrow"></div>',
 	});
 }
 
