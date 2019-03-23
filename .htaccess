@@ -5,5 +5,9 @@ ErrorDocument 401 /400.html
 ErrorDocument 402 /400.html
 ErrorDocument 403 /400.html
 ErrorDocument 404 /400.html
-
 ErrorDocument 500 /500.html
+
+### IMAGE CACHING
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^/images/(.*)$ //d2zsq11t5x35lg.cloudfront.net/images/$1 [NC,L]
