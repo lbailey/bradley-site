@@ -34,6 +34,7 @@ class Exception extends \Exception
      */
     public function errorMessage()
     {
-        return '<strong>' . htmlspecialchars($this->getMessage()) . "</strong><br />\n";
+        /*return '<strong>' . htmlspecialchars($this->getMessage()) . "</strong><br />\n";*/
+				return "For any urgent inquiries, please feel free to reach us by phone or email:<br ><strong>202.695.8056<br/>info@bradleysitedesign.com</strong><br />\n";
     }
 }
