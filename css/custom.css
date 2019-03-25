@@ -123,6 +123,11 @@ html.sticky-header-active #header .header-body,
   background: #284779;
 }
 
+#header .header-logo {
+	/*margin: 1rem 0 0 0;*/
+	top: .5rem!important;
+}
+
 /* Main */
 
 .main {
@@ -328,6 +333,7 @@ input.btn-primary {
 
 /* Projects */
 
+div.impact-focus,
 div.project-focus  {
 	padding: 0;
 	float: right!important;
@@ -384,11 +390,20 @@ div.project-focus > #right-arrow,
   content: '\e825';
 }
 
+div.impact-focus img,
 div.project-focus img {
 	float: right;
   width: 100%;
 	object-fit: contain;
-  /*height: 475px;*/
+}
+
+div.impact-focus img {
+	object-fit: contain;
+}
+
+div.project-focus img {
+	object-fit: cover;
+	height: 400px;
 }
 
 div.project-indv  {
@@ -398,7 +413,8 @@ div.project-indv  {
 }
 
 div.project-indv img.large {
-	height: auto;
+	height: 600px;
+	object-fit: cover;
   width: 100%;
 }
 
@@ -456,6 +472,11 @@ div.col-md-4.glance {
 div.col-md-4.glance p {
   color: rgb(40,71,121);
 }
+
+div.glance {
+	padding-left: 15px;
+}
+	
 
 /* Images */
 
@@ -603,10 +624,13 @@ img.staff-moving-image {
 	}
 	
 	/* Indv Projects */
-	div.project-indv,
 	div.project-indv img.large {
-    /*height: 550px;*/
+    height: 500px;
   }
+  
+  div.project-focus img {
+		height: 360px;
+	}
   
   .slick-slide img.thumb {
     height: 100px;
@@ -627,10 +651,13 @@ img.staff-moving-image {
 	}
 	
 	/* Indv Projects */
-	div.project-indv,
 	div.project-indv img.large {
-    /*500*/
+    height: 400px;
   }
+  
+  div.project-focus img {
+		height: 300px;
+	}
   
   .slick-slide img.thumb {
     height: 90px;
@@ -643,11 +670,21 @@ img.staff-moving-image {
 
 @media (max-width: 991px) {
 	
+	.bsd-logo {
+  	width: 325px;
+  	height: 50px;
+  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+		margin-bottom:0;
+	}
+	
 	/* Indv Projects */
-	div.project-indv,
 	div.project-indv img.large {
-   /* height: 450px;*/
+   height: 350px;
   }
+
+  div.project-focus img {
+		height: 250px;
+	}   
   
   .slick-slide img.thumb {
     height: 80px;
@@ -661,14 +698,20 @@ img.staff-moving-image {
 
 @media (max-width: 767px) {
 
+	.bsd-logo {
+  	width: 325px;
+  	height: 50px;
+  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+		margin-bottom:0;
+	}
+
 	.container {
 		max-width: 90%;
 	}
 
 	/* Indv Projects */
-	div.project-indv,
 	div.project-indv img.large {
-    /*height: 350px;*/
+    height: 250px;
   }
   
   img.staff-page-thumb {
@@ -684,7 +727,7 @@ img.staff-moving-image {
 	}
 
 	.bsd-logo {
-  	width: 330px;
+  	width: 325px;
   	height: 50px;
   	background: url("/images/common/logo-icon.jpg") no-repeat!important;
 		margin-bottom:0;
@@ -723,18 +766,26 @@ img.staff-moving-image {
 	}
 	
 	.bsd-logo {
-  	width: 300px;
-  	height: 46px;
-  	background: url(/images/common/logo.jpg) no-repeat!important;
+  	width: 325px;
+  	height: 50px;
+  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+		margin-bottom:0;
 	}
 	
-	div.project-indv,
 	div.project-indv img.large {
-    /*height: 300px;*/
+    height: 225px;
   }
+  
+  div.project-focus img {
+		height: 200px;
+	}
   
   .slider-indv-thumbs {
     display: none;
+  }
+  
+  div.row.project-about {
+    border-top: 0; 
   }
   
 	div.project-summary {
@@ -764,6 +815,10 @@ img.staff-moving-image {
 		padding: 0;
 	}	
 	
+	div.col-md-12 > .col-md-4.glance {
+		padding: 15px;
+	}
+	
 	div.push-down { margin-top: 1rem!important; }
 	
 	span.header.project-cat {
@@ -778,18 +833,26 @@ img.staff-moving-image {
 	}
 	
 	.bsd-logo {
-  	width: 300px;
-  	height: 46px;
-  	background: url(/images/common/logo.jpg) no-repeat!important;
+  	width: 325px;
+  	height: 50px;
+  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+		margin-bottom:0;
 	}
 	
-	div.project-indv,
 	div.project-indv img.large {
-    /*height: 300px;*/
+    height: 225px;
   }
+  
+  div.project-focus img {
+		height: 200px;
+	}
   
   .slider-indv-thumbs {
     display: none;
+  }
+  
+  div.row.project-about {
+    border-top: 0; 
   }
   
 	div.project-summary {
@@ -811,6 +874,10 @@ img.staff-moving-image {
 		padding: 0;
 		width: 100%;
 	}	
+	
+	div.col-md-12 > .col-md-4.glance {
+		padding: 15px;
+	}
 	
 	div.push-down { margin-top: 1rem!important; }
 	

@@ -36,6 +36,12 @@ function init_slick_ovrvw_tms() {
 			 responsive: [{
 					 breakpoint: 1024,
 					 settings: {
+							 slidesToShow: 6,
+							 infinite: true
+					 }
+			 },{
+					 breakpoint: 900,
+					 settings: {
 							 slidesToShow: 5,
 							 infinite: true
 					 }
@@ -52,7 +58,7 @@ function init_slick_ovrvw_tms() {
 							 infinite: true
 					 }
 			 },{
-					 breakpoint: 300,
+					 breakpoint: 200,
 					 settings: "unslick" // destroys slick
 			 }]
 	 });
@@ -91,7 +97,7 @@ function init_slick_indv_tms() {
 							 infinite: true
 					 }
 				},{
-					 breakpoint: 300,
+					 breakpoint: 100,
 					 settings: "unslick" // destroys slick
 			 }]
 	 });
