@@ -56,8 +56,8 @@ try {
 
 	// Step 2 (Optional) - If you don't receive the email, try to configure the parameters below:
 
-	//$mail->IsSMTP();                                         // Set mailer to use SMTP
-	//$mail->Host = 'mail.yourserver.com';				       // Specify main and backup server
+	$mail->IsSMTP();                                         // Set mailer to use SMTP
+	$mail->Host = 'mail.bradleysitedesign.com';				       // Specify main and backup server
 	//$mail->SMTPAuth = true;                                  // Enable SMTP authentication
 	//$mail->Username = 'user@example.com';                    // SMTP username
 	//$mail->Password = 'secret';                              // SMTP password
