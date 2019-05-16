@@ -7,3 +7,4 @@ ErrorDocument 403 /400.html
 ErrorDocument 404 /400.html
 ErrorDocument 500 /500.html
 
+AddType image/svg+xml .svg .svgz
