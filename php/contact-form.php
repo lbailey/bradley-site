@@ -23,7 +23,7 @@ require 'php-mailer/src/Exception.php';
 $email = 'lcbailey210@gmail.com';
 
 // If the e-mail is not working, change the debug option to 2 | $debug = 2;
-$debug = 2;
+$debug = 0;
 
 // If contact form don't has the subject input change the value of subject here
 $subject = ( isset($_POST['subject']) ) ? $_POST['subject'] : 'Define subject in php/contact-form.php line 29';
@@ -56,8 +56,8 @@ try {
 
 	// Step 2 (Optional) - If you don't receive the email, try to configure the parameters below:
 
-	$mail->IsSMTP();                                         // Set mailer to use SMTP
-	$mail->Host = 'smtp.bradleysitedesign.com';				       // Specify main and backup server
+	//$mail->IsSMTP();                                         // Set mailer to use SMTP
+	//$mail->Host = 'smtp.bradleysitedesign.com';				       // Specify main and backup server
 	//$mail->SMTPAuth = true;                                  // Enable SMTP authentication
 	//$mail->Username = 'user@example.com';                    // SMTP username
 	//$mail->Password = 'secret';                              // SMTP password
