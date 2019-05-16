@@ -52,7 +52,8 @@ a:hover, a:focus {
 .bsd-logo {
   width: 598px;
   height: 58px;
-  background-image: url(/images/common/logo.svg);
+  background-image: url(/images/common/logo.png);
+  /*background-image: linear-gradient(transparent, transparent),url(/images/common/logo.svg);*/
   background-size: 600px;
   background-repeat: no-repeat!important;
 	background-position: top left;
@@ -630,6 +631,7 @@ img.staff-moving-image {
   	width: 325px;
   	height: 50px;
   	background-image: url("/images/common/logo-clip.png");
+  	/*background-image: url("/images/common/logo-clip.svg"),linear-gradient(transparent, transparent);*/
 		margin-bottom:0;
 		background-size: 325px;
   	background-repeat: no-repeat!important;
@@ -663,7 +665,8 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 325px;
   	height: 50px;
-  	background-image: url("/images/common/logo-clip.svg");
+  	background-image: url("/images/common/logo-clip.png");
+  	/*background-image: url("/images/common/logo-clip.svg"),linear-gradient(transparent, transparent);*/
   	background-size: 325px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
@@ -697,7 +700,7 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 550px;
   	height: 50px;
-  	background-image: url("/images/common/logo.svg");
+  	background-image: url("/images/common/logo.png");
   	background-size: 550px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
@@ -728,7 +731,8 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 325px;
   	height: 50px;
-  	background-image: url("/images/common/logo-clip.svg");
+  	background-image: url("/images/common/logo-clip.png");
+  	/*background-image: url("/images/common/logo-clip.svg"),linear-gradient(transparent, transparent);*/
   	background-size: 325px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
@@ -763,7 +767,8 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 325px;
   	height: 50px;
-  	background-image: url("/images/common/logo-clip.svg");
+  	background-image: url("/images/common/logo-clip.png");
+  	/*background-image: url("/images/common/logo-clip.svg"),linear-gradient(transparent, transparent);*/
   	background-size: 325px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
@@ -809,7 +814,8 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 300px;
   	height: 50px;
-  	background-image: url("/images/common/logo-clip.svg");
+  	background-image: url("/images/common/logo-clip.png");
+  	/*background-image: url("/images/common/logo-clip.svg"),linear-gradient(transparent, transparent);*/
   	background-size: 300px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
@@ -905,7 +911,8 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 275px;
   	height: 50px;
-  	background-image: url("/images/common/logo-clip.svg");
+  	background-image: url("/images/common/logo-clip.png");
+  	/*background-image: url("/images/common/logo-clip.svg"),linear-gradient(transparent, transparent);*/
   	background-size: 275px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
@@ -1007,7 +1014,8 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 230px;
   	height: 50px;
-  	background-image: url("/images/common/logo-clip.svg");
+  	background-image: url("/images/common/logo-clip.png");
+  	/*background-image: url("/images/common/logo-clip.svg"),linear-gradient(transparent, transparent);*/
   	background-size: 230px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
