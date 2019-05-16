@@ -52,11 +52,18 @@ a:hover, a:focus {
 .bsd-logo {
   width: 598px;
   height: 58px;
-  background: url("/images/common/logo.jpg") no-repeat!important;
+  background-image: url(/images/common/logo.svg);
+  background-size: 600px;
+  background-repeat: no-repeat!important;
+	background-position: top left;
 }
 
 .bsd-logo span {
   display: none!important;
+}
+
+.portrait {
+  display: none;
 }
 
 /* Header */
@@ -124,7 +131,6 @@ html.sticky-header-active #header .header-body,
 }
 
 #header .header-logo {
-	/*margin: 1rem 0 0 0;*/
 	top: .5rem!important;
 }
 
@@ -615,12 +621,19 @@ img.staff-moving-image {
 
 }
 @media (min-width:1024px) and (max-width:1200px){
+
+	#header .header-logo {
+		top: .8rem!important;
+	}
 	
 	.bsd-logo {
   	width: 325px;
   	height: 50px;
-  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+  	background-image: url("/images/common/logo-clip.png");
 		margin-bottom:0;
+		background-size: 325px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
 	}
 	
 	/* Indv Projects */
@@ -643,10 +656,17 @@ img.staff-moving-image {
 
 @media (min-width:992px) and (max-width:1023px){
 
+	#header .header-logo {
+		top: .8rem!important;
+	}
+
 	.bsd-logo {
   	width: 325px;
   	height: 50px;
-  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+  	background-image: url("/images/common/logo-clip.svg");
+  	background-size: 325px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
 		margin-bottom:0;
 	}
 	
@@ -669,11 +689,18 @@ img.staff-moving-image {
 }
 
 @media (max-width: 991px) {
-	
+
+	#header .header-logo {
+		top: .8rem!important;
+	}
+
 	.bsd-logo {
-  	width: 325px;
+  	width: 550px;
   	height: 50px;
-  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+  	background-image: url("/images/common/logo.svg");
+  	background-size: 550px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
 		margin-bottom:0;
 	}
 	
@@ -701,7 +728,10 @@ img.staff-moving-image {
 	.bsd-logo {
   	width: 325px;
   	height: 50px;
-  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+  	background-image: url("/images/common/logo-clip.svg");
+  	background-size: 325px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
 		margin-bottom:0;
 	}
 
@@ -725,11 +755,18 @@ img.staff-moving-image {
 	html.sticky-header-active #header .header-body{
 		position:relative;
 	}
+	
+	#header .header-logo {
+		top: 1.1rem!important;
+	}
 
 	.bsd-logo {
   	width: 325px;
   	height: 50px;
-  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+  	background-image: url("/images/common/logo-clip.svg");
+  	background-size: 325px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
 		margin-bottom:0;
 	}
 	
@@ -765,11 +802,35 @@ img.staff-moving-image {
 		position: relative;
 	}
 	
+	#header .header-logo {
+		top: 1.1rem!important;
+	}
+	
 	.bsd-logo {
-  	width: 325px;
+  	width: 300px;
   	height: 50px;
-  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+  	background-image: url("/images/common/logo-clip.svg");
+  	background-size: 300px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
 		margin-bottom:0;
+	}
+	
+	.portrait {
+  	display: block;
+	}
+	
+	.landscape {
+  	display: none;
+	}
+	
+	div.tp-caption.main-label {
+		font-size: 33pt;
+		font-family:'Oswald', sans-serif;
+		text-transform: uppercase;
+		font-weight: bolder;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+		line-height: 33pt;
 	}
 	
 	div.project-indv img.large {
@@ -827,16 +888,63 @@ img.staff-moving-image {
 }
 	
 @media (max-width: 479px) {
+
+	.main {
+    padding-top: 0;
+    margin-top: -10px;
+	}
 	
 	html.sticky-header-active #header .header-body {
 		position: relative;
 	}
 	
+	#header .header-logo {
+		top: 1.4rem!important;
+	}
+	
 	.bsd-logo {
-  	width: 325px;
+  	width: 275px;
   	height: 50px;
-  	background: url("/images/common/logo-icon.jpg") no-repeat!important;
+  	background-image: url("/images/common/logo-clip.svg");
+  	background-size: 275px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
 		margin-bottom:0;
+		margin-left: -5px;
+	}
+	
+	#header .header-body {
+    position: relative;
+    border-bottom-width: 10px;
+    border-bottom-color: rgba(40, 71, 121, 1);
+    border-top: 0;
+	}
+	
+	#footer {
+    border-top: 10px solid #284779;
+    margin: 10px 0;
+  }
+  
+  #footer .footer-copyright p {
+    margin-top: -10px;
+    font-size: .05em;
+	}
+	
+	.portrait {
+  	display: block;
+	}
+	
+	.landscape {
+  	display: none;
+	}
+	
+	div.tp-caption.main-label {
+		font-size: 33pt;
+		font-family:'Oswald', sans-serif;
+		text-transform: uppercase;
+		font-weight: bolder;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+		line-height: 33pt;
 	}
 	
 	div.project-indv img.large {
@@ -891,5 +999,19 @@ img.staff-moving-image {
 	
 	span.header.project-cat {
 		display: none;
+	}
+}
+
+@media (max-width: 375px) {
+	
+	.bsd-logo {
+  	width: 230px;
+  	height: 50px;
+  	background-image: url("/images/common/logo-clip.svg");
+  	background-size: 230px;
+  	background-repeat: no-repeat!important;
+		background-position: top left;
+		margin-bottom:0;
+		margin-left: -15px;
 	}
 }

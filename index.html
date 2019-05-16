@@ -127,7 +127,8 @@
 				</div>
 			</header>
 			<div class="main" role="main">
-				<div class="slider-container rev_slider_wrapper">
+			<div id="desktop" class="landscape">
+				<div class="slider-container rev_slider_wrapper landscape">
 					<div class="slider rev_slider" data-version="5.4.5" data-plugin-options="{'delay': 2000, 'gridwidth': 1170, 'gridheight': 500, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500]}" data-plugin-revolution-slider id="revolutionSlider">
 						<ul>
 							<li data-transition="fade">
@@ -171,7 +172,55 @@
 						</a>
 					</div>
 				</div>
-			</div>
+				</div>
+				<!--begin mobile-->
+				<div id="mobile-slider" class="portrait">
+				<div class="slider-container rev_slider_wrapper portrait">
+					<div class="slider rev_slider_mobile" data-version="5.4.5" data-plugin-options="{'delay': 2000, 'gridwidth': 350, 'gridheight': 450, 'disableProgressBar': 'on'}" data-plugin-revolution-slider id="revolutionSlider">
+						<ul>
+							<li data-transition="fade">
+								<img alt="" class="rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="images/common/mobile/SLIDE1.jpg">
+								<div class="tp-caption main-label" data-mask_in="x:0px;y:0px;" data-start="0" data-transform_in="y:[100%];s:1100;" data-transform_out="opacity:0;s:500;" data-whitespace="nowrap" data-x="10" data-y="180">
+									Engage
+								</div>
+							</li>
+							<li data-transition="fade">
+								<img alt="" class="rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="images/common/mobile/SLIDE2.jpg">
+								<div class="tp-caption main-label" data-mask_in="x:0px;y:0px;" data-start="20" data-transform_in="y:[100%];s:1100;" data-transform_out="opacity:0;s:500;" data-whitespace="nowrap" data-x="10" data-y="180">
+									Innovate
+								</div>
+							</li>
+							<li data-transition="fade">
+								<img alt="" class="rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="images/common/mobile/SLIDE3.jpg">
+								<div class="tp-caption main-label" data-mask_in="x:0px;y:0px;" data-start="20" data-transform_in="y:[100%];s:1100;" data-transform_out="opacity:0;s:500;" data-whitespace="nowrap" data-x="10" data-y="180">
+									Inspire
+								</div>
+							</li>
+							<li data-link="/design4impact.html" data-transition="fade">
+								<img alt="" class="rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" src="images/common/mobile/SLIDE4.jpg">
+								<div class="tp-caption main-label" data-mask_in="x:0px;y:0px;" data-start="20" data-transform_in="y:[100%];s:1100;" data-transform_out="opacity:0;s:500;" data-whitespace="nowrap" data-x="10" data-y="130">
+									Design<br>for<br>Impact
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="social-icons" style="margin-left: -40px;">
+						<a href="https://www.facebook.com/BSD4Impact/" target="_">
+							<i class="fa fa-facebook-square"></i>
+						</a> 
+						<a href="https://twitter.com/BSD4Impact" target="_">
+							<i class="fa fa-twitter-square"></i>
+						</a> 
+						<a href="https://www.linkedin.com/company/bradley-site-design-inc./" target="_">
+							<i class="fa fa-linkedin-square"></i>
+						</a> 
+						<a href="https://www.instagram.com/bsd4impact/" target="_">
+							<i class="fa fa-instagram"></i>
+						</a>
+					</div>
+				</div>
+				</div>
+			</div><!--end mobile-->
 			<footer id="footer">
 				<div class="footer-copyright">
 					<div class="container">
@@ -188,12 +237,16 @@
 	<!-- Vendor -->
 	<script src="/vdr/jquery/jquery.min.js" type="text/javascript"></script> 
 	<script src="/vdr/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
+	<script src="/vdr/common/common.min.js" type="text/javascript"></script> 
+	<script src="/vdr/jquery.appear/jquery.appear.min.js" type="text/javascript"></script> 
+	<script src="/vdr/jquery.validation/jquery.validate.min.js" type="text/javascript"></script> 
+	
+	<script src="/js/theme.js" type="text/javascript"></script>
 	
 	<script src="/vdr/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
 	<script src="/vdr/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	
 	<!-- Theme Base, Components and Settings -->
-	<script src="/js/theme.js" type="text/javascript"></script>
 	<script src="/js/theme.init.js" type="text/javascript"></script> 
 
 </body>
