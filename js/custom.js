@@ -49,12 +49,14 @@ function init_slick_ovrvw_tms() {
 					 breakpoint: 600,
 					 settings: {
 							 slidesToShow: 4,
+  						 slidesToScroll: 2,
 							 infinite: true
 					 }
 			 },{
 					 breakpoint: 450,
 					 settings: {
 							 slidesToShow: 3,
+  						 slidesToScroll: 1,
 							 infinite: true
 					 }
 			 },{
@@ -88,12 +90,14 @@ function init_slick_indv_tms() {
 					 breakpoint: 900,
 					 settings: {
 							 slidesToShow: 5,
+  						 slidesToScroll: 5,
 							 infinite: true
 					 }					 
 				},{
 					 breakpoint: 600,
 					 settings: {
 							 slidesToShow: 4,
+  						 slidesToScroll: 2,
 							 infinite: true
 					 }
 				},{
