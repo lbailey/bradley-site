@@ -1,2 +1,167 @@
 # bradley-site
 duplicate of bradley site
+
+## Table of Contents
+- [Abstract](#abstract)
+- [Development](#development)
+- [Heroku](#heroku)
+- [License](#license)
+
+## Abstract
+- __theme based:__ set contains out-of-box markup and styling for quick, responsive pages
+- __fully responsive:__ minimal effort development for desktop, mobile, and tablet
+- __cloud hosting:__ zero server maintenance with Heroku performance-driven cloud hosting
+- __simple releases:__ any merge to `master` will trigger a hands-free release
+- __easy development:__ vagrant makes for simple, assured local development and testing
+
+## Development
+Development should be as straight-forward and lightweight as possible. This 
+section will outline best practices required to develop and test code meant
+for production.
+
+### Github
+Github can be utilized to be the easiest or most complex tool in any development,
+so this is meant to be a quick guide on how best to work in this repository.
+This doc assumes basic familiarity with the CLI, and assumes a Mac OS X machine.
+
+#### Setup
+
+In order to start development, navigate to a directory in the Terminal and 
+confirm you have `git` installed and are ready to develop. You will also need
+to install and use `Homebrew`. 
+
+```
+$ git --version
+git version 2.9.2
+$ brew --version
+Homebrew 2.0.5
+```
+
+If git is not installed, you can use Homebrew to install it. To install Homebrew:
+
+```
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+To install git using Homebrew, and set your credentials:
+
+```
+$ brew install git
+$ git --version
+git version 2.9.2
+$ git config --global user.name "First Last"
+$ git config --global user.email "first.last@gmail.com"
+```
+
+Once you have this set, you are free to clone the repository. 
+
+```
+$ cd ~/Documents
+$ mkdir local/bradleysitedesign/www
+$ cd local/bradleysitedesign/www
+$ git clone https://github.com/bradleysitedesign/portfolio.git
+$ cd portfolio
+$ git status
+``` 
+
+### Vagrant
+
+Vagrant is a tool to run code rendered in a virtual environment in order to 
+accurately develop so that you can mimic the production environment exactly.
+
+Download for macOS: https://www.vagrantup.com/downloads.html
+
+```
+$ vagrant --version
+Vagrant 2.2.4
+```
+
+Basic commands used below for vagrant: `vagrant up`, `vagrant reload`, 
+and `vagrant halt`
+
+#### Setup
+
+This section essentially summarizes steps from [Part 1](https://www.taniarascia.com/what-are-vagrant-and-virtualbox-and-how-do-i-use-them/) and Steps 1-4 of [Part 2](https://www.taniarascia.com/how-to-install-apache-php-7-1-and-mysql-on-ubuntu-with-vagrant/)
+
+##### Partion the VM and Apache
+
+```
+$ cd ~/Documents/local/bradleysitedesign/www
+$ vagrant box add ubuntu/trusty64
+$ vagrant init ubuntu/trusty64
+$ vagrant plugin install vagrant-vbguest
+$ vagrant up
+$ vagrant ssh
+```
+
+```
+vagrant@vagrant-ubuntu-trusty-64:~$ sudo vim /etc/apache2/apache2.conf
+```
+
+Vim is a very useful but very difficult inline text-editing tool. It can 
+be stressful to use if you haven't before. Use the arrows to navigate to
+the end of the file, and to begin typing, tap the letter "i" on the keyboard.
+You will see that the inline editor says `-- INSERT --`. To quit the ability
+to insert, hit Ctrl-C.
+
+Navigate to the end of the file and use "i" to paste the server name line
+listed below, then hit Ctrl-C, then type ":wq" and hit "Enter"
+
+```
+ServerName localhost
+```
+
+Then restart the server:
+
+```
+vagrant@vagrant-ubuntu-trusty-64:~$ sudo service apache2 restart
+vagrant@vagrant-ubuntu-trusty-64:~$ sudo apache2ctl configtest
+Syntax OK
+vagrant@vagrant-ubuntu-trusty-64:~$ exit
+```
+
+##### Sync Directory 
+
+Navigate to the folder in `/Documents/local/bradleysitedesign/www` in what
+ever text editor you prefer and edit the `Vagrantfile` there. You are going
+to uncomment (remove the `#`) from the line 
+
+```
+# config.vm.network "private_network", ip: "192.168.33.10"
+```
+
+to be 
+
+```
+config.vm.network "private_network", ip: "192.168.33.10"
+config.vm.synced_folder "www/portfolio", "/var/www/html"
+```
+
+And then reload the VM using `vagrant reload`:
+
+```
+$ vagrant reload
+```
+
+##### Finalize Domain
+
+In order to have an easier domain to develop with locally, you will need
+to update your etc/hosts file to give a hostname to your VM website. Use `vim`
+again to add the line `192.168.33.10  bradley.dev` to the bottom of the file
+using `i` to `-- INSERT --`, paste the above, and type Ctrl-C, then type `:wq`
+and hit Enter. You can use `cat` command in the CLI to verify if the file is 
+properly updated. 
+
+```
+$ vim /etc/hosts
+$ cat /etc/hosts
+...
+192.168.33.10   bradley.dev
+```
+
+## Heroku
+
+
+## License
+
+
