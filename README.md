@@ -104,16 +104,13 @@ the end of the file, and to begin typing, tap the letter "i" on the keyboard.
 You will see that the inline editor says `-- INSERT --`. To quit the ability
 to insert, hit Ctrl-C.
 
-Navigate to the end of the file and use "i" to paste the server name line
-listed below, then hit Ctrl-C, then type ":wq" and hit "Enter"
+Navigate to the end of the file and type the keyboard key `i` to be able to 
+paste this line `ServerName localhost` at the end of the file. Type Ctrl-C, 
+then type `:wq` and hit `Enter`. Check to confirm the file looks correct 
+by using the `cat` command, and restart the server. 
 
 ```
-ServerName localhost
-```
-
-Then restart the server:
-
-```
+vagrant@vagrant-ubuntu-trusty-64:~$ cat /etc/apache2/apache2.conf
 vagrant@vagrant-ubuntu-trusty-64:~$ sudo service apache2 restart
 vagrant@vagrant-ubuntu-trusty-64:~$ sudo apache2ctl configtest
 Syntax OK
@@ -122,26 +119,24 @@ vagrant@vagrant-ubuntu-trusty-64:~$ exit
 
 ##### Sync Directory 
 
-Navigate to the folder in `/Documents/local/bradleysitedesign/www` in what
+Navigate to the folder in `/Documents/local/bradleysitedesign/www` in which
 ever text editor you prefer and edit the `Vagrantfile` there. You are going
-to uncomment (remove the `#`) from the line 
+to uncomment (remove the `#`) from the private network line and add the 
+folder sync:
 
 ```
 # config.vm.network "private_network", ip: "192.168.33.10"
 ```
 
-to be 
+should look like 
 
 ```
 config.vm.network "private_network", ip: "192.168.33.10"
 config.vm.synced_folder "www/portfolio", "/var/www/html"
 ```
 
-And then reload the VM using `vagrant reload`:
+Then reload the VM using `vagrant reload`
 
-```
-$ vagrant reload
-```
 
 ##### Finalize Domain
 
