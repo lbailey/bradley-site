@@ -43,6 +43,7 @@ function init_slick_ovrvw_tms() {
 					 breakpoint: 900,
 					 settings: {
 							 slidesToShow: 5,
+							 slidesToScroll: 4,
 							 infinite: true
 					 }
 			 },{
