@@ -85,6 +85,9 @@ This section essentially summarizes steps from [Part 1](https://www.taniarascia.
 
 ##### Partion the VM and Apache
 
+This section sets up apache and sets the partions and sync for your virtual 
+machine setup to test locally. 
+
 ```
 $ cd ~/Documents/local/bradleysitedesign/www
 $ vagrant box add ubuntu/trusty64
@@ -94,27 +97,27 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-```
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo vim /etc/apache2/apache2.conf
-```
-
 Vim is a very useful but very difficult inline text-editing tool. It can 
-be stressful to use if you haven't before. Use the arrows to navigate to
-the end of the file, and to begin typing, tap the letter "i" on the keyboard.
-You will see that the inline editor says `-- INSERT --`. To quit the ability
-to insert, hit Ctrl-C.
+be stressful to use if you haven't before. After typing a `vim` command, 
+use the keyboard arrow keys to navigate to the end of the file, and to 
+begin typing, tap the letter `i` on the keyboard. You will see that the 
+inline editor says `-- INSERT --`. To stop inserting, hit Ctrl-C.
+
+```
+:~$ sudo vim /etc/apache2/apache2.conf
+```
 
 Navigate to the end of the file and type the keyboard key `i` to be able to 
-paste this line `ServerName localhost` at the end of the file. Type Ctrl-C, 
+paste the line `ServerName localhost` somewhere within the file. Type Ctrl-C, 
 then type `:wq` and hit `Enter`. Check to confirm the file looks correct 
 by using the `cat` command, and restart the server. 
 
 ```
-vagrant@vagrant-ubuntu-trusty-64:~$ cat /etc/apache2/apache2.conf
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo service apache2 restart
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo apache2ctl configtest
+:~$ cat /etc/apache2/apache2.conf
+:~$ sudo service apache2 restart
+:~$ sudo apache2ctl configtest
 Syntax OK
-vagrant@vagrant-ubuntu-trusty-64:~$ exit
+:~$ exit
 ```
 
 ##### Sync Directory 
@@ -153,6 +156,9 @@ $ cat /etc/hosts
 ...
 192.168.33.10   bradley.dev
 ```
+
+Now, with vagrant running, use Chrome to open `bradley.dev` in your browser
+and you should see it successfully display the website!
 
 ## Heroku
 

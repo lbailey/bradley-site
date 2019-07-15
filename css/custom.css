@@ -42,11 +42,20 @@ h3 {
 
 a {
 	color: #284779;
+	outline : none;
+}
+
+a img {
+  outline : none;
+  border: 0;
+  border-style: none;
 }
 
 a:hover, a:focus {
 	color:#777;
 	text-decoration: none;
+	border-style: none;
+	outline : none;
 }
 
 .bsd-logo {
@@ -271,6 +280,14 @@ img.staff-image {
 	padding-top: calc(180 / 305 * 100%);
 }
 
+.col-md-12 ul li {
+  line-height: 24px;
+  list-style-type: circle;
+  margin-left: -13pt;
+  line-height: 20pt;
+  font-size: 1.1em;
+}
+
 
 /* Contact */
 
@@ -437,6 +454,16 @@ h5.project-detail {
   padding-right: 5pt;
 }
 
+h5.project-detail.light > span {
+  background: rgba(111,111,111,.4);
+  padding: 2pt 4pt;
+}
+
+h5.project-detail.dark > span {
+  background: rgba(333,333,333,.65);
+  padding: 2pt 4pt;
+}
+
 h5.project-title {
   max-width: 146px;
   text-align: center;
@@ -482,6 +509,18 @@ div.col-md-4.glance p {
 
 div.glance {
 	padding-left: 15px;
+}
+
+span.property-before {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+	background: rgba(333,333,333,.7);
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 8pt 14pt;
+	font-size: 1.5em;
+	color: #1e3964;
 }
 	
 
@@ -796,8 +835,10 @@ img.staff-moving-image {
 	
 	div.push-down { margin-top: 1rem!important; }
 	
+	/*
 	div.col-md-5 { width:45%; }
 	div.col-md-7 { width:55%; }
+	*/
 }
 	
 /* iPhone X */
@@ -837,6 +878,10 @@ img.staff-moving-image {
 		font-weight: bolder;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 		line-height: 33pt;
+	}
+	
+	div.project-indv {
+		margin-top: 10px;
 	}
 	
 	div.project-indv img.large {
@@ -889,16 +934,32 @@ img.staff-moving-image {
 	div.push-down { margin-top: 1rem!important; }
 	
 	span.header.project-cat {
-		display: none;
+		
 	}
+	
+	span.header.project-loc {
+	  float: right;
+	  margin-top: 10px;
+	}
+  
+  span.header.project-title {
+    white-space: normal;
+  }
+  
+  span.header.mobile-nowrap {
+    white-space: pre;
+  }
+	
+	div.row.project-about {
+    border-top: none;
+  }
+  
+  p {
+    font-size: 12pt;
+  }
 }
 	
 @media (max-width: 479px) {
-
-	.main {
-    padding-top: 0;
-    margin-top: -10px;
-	}
 	
 	html.sticky-header-active #header .header-body {
 		position: relative;
@@ -954,6 +1015,10 @@ img.staff-moving-image {
 		line-height: 33pt;
 	}
 	
+	div.project-indv {
+		margin-top: 10px;
+	}
+	
 	div.project-indv img.large {
     height: 225px;
   }
@@ -969,6 +1034,7 @@ img.staff-moving-image {
   div.row.project-about {
     border-top: 0; 
   }
+  
   
 	div.project-summary {
     clear: left;
@@ -1005,8 +1071,25 @@ img.staff-moving-image {
 	}
 	
 	span.header.project-cat {
-		display: none;
+		
 	}
+	
+	span.header.project-loc {
+	  float: right;
+	  margin-top: 10px;
+	}
+  
+  span.header.project-title {
+    white-space: normal;
+  }
+  
+  span.header.mobile-nowrap {
+    white-space: pre;
+  }
+	
+	p {
+    font-size: 12pt;
+  }
 }
 
 @media (max-width: 375px) {
