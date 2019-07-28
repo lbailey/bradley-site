@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	//project_brief_slick('div.project-focus');
 	//project_indv_slick('div.slider-indv-thumbs');
+	highlight_awards();
 });
 
 $(window).on("load", function() {
@@ -10,7 +11,6 @@ $(window).on("load", function() {
 	init_slick_indv_tms();
 	project_indv_slick('div.slider-indv-thumbs');
 });
-
 
 /*
 * Slick Slide Project Outline Scroller
@@ -151,3 +151,84 @@ function scroll_to_indv_lg(event) {
 	 toFadeOut.css('opacity','0');
 	 toFadeIn.css('opacity','1');
 }
+
+/*!
+ * Run a callback function after scrolling has stopped
+ * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Function} callback The function to run after scrolling
+ */
+var scrollStop = function (callback) {
+	if (!callback || typeof callback !== 'function') return;
+	var isScrolling;
+
+	window.addEventListener('scroll', function (event) {
+		window.clearTimeout(isScrolling);
+		isScrolling = setTimeout(function() {
+			callback();
+		}, 66);
+	}, false);
+};
+
+function highlight_awards() {
+
+	if (~top.location.pathname.indexOf("/community/test")) {
+
+	var viewOffset = ($( window ).height())/2.75;
+	var yearOffset = 448;
+	var highlightRange = 40;
+  var $sections = $('.col-md-12.community ul > li');
+  
+  $(window).scroll(function(){
+    
+    // currentScroll is the number of pixels the window has been scrolled
+    var currentScroll = $(this).scrollTop() + viewOffset;
+    console.log("position from top: " + currentScroll);
+    
+    if (currentScroll >= 2590) {
+     	console.log("stop!: ");
+    	return false;
+    }
+    
+    $('.timeline-year').removeClass("year-range month-year frequent");
+    //$('.timeline-year').css("opacity",".05");
+    
+    var $currentSection
+    
+    $sections.each(function(){     
+      var divPosition = $(this).offset().top;
+      if( currentScroll > 400){
+      	$(this).removeClass("highlight-award");
+      }
+      
+      if( divPosition < currentScroll && divPosition >= (currentScroll-highlightRange)){
+        $currentSection = $(this);
+        console.log("make it bold " + $(this).text());
+        $(this).addClass("highlight-award");
+        var moveYear = divPosition - yearOffset;
+        $('.timeline-year').css("top", moveYear + "px");
+        $('.timeline-year').text($(this).attr("award-year"));
+        var addClass = $(this).attr("add-class");
+				if (typeof addClass !== typeof undefined && addClass !== false) {
+					$('.timeline-year').addClass(addClass);
+				}
+      } 
+      
+    });
+    if (currentScroll < 440) {
+      var topAward = $('.col-md-12.community ul > li').first();
+      var move = topAward.offset().top - yearOffset;
+      $('.timeline-year').css("top", move + "px");
+      $('.timeline-year').text(topAward.attr("award-year"));
+      $sections.each(function(){
+      	$(this).removeClass("highlight-award");
+      });
+      topAward.addClass("highlight-award");
+    }
+  });
+  }
+}
+
+scrollStop(function () {
+    //console.log('Scrolling has stopped.');
+    //$('.timeline-year').animate({opacity: 1}, 300);
+});

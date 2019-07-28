@@ -66,6 +66,7 @@ a:hover, a:focus {
   background-size: 600px;
   background-repeat: no-repeat!important;
 	background-position: top left;
+	margin-left: -3%;
 }
 
 .bsd-logo span {
@@ -288,6 +289,144 @@ img.staff-image {
   font-size: 1.1em;
 }
 
+div.community {
+	display: flex;
+}
+
+div.community ul {
+	padding: 0 0 0 13pt;
+}
+
+.community ul li { 
+  line-height: 24px;
+  list-style-type: none;
+  line-height: 20pt;
+  font-size: 1.1em;
+  padding: 5pt 5pt 5pt 0;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.community ul li span { 
+  padding: 2pt 0 2pt 10pt;
+}
+
+.timeline {
+  width: 12%;
+  min-width: 100px;
+  display: block;
+  height: 550px;
+  float: left;
+  border-right: 1px solid #284779;
+}
+
+div.timeline-year {
+	position: relative;
+	top: -12px;
+	font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #284779;
+  font-weight: bolder;
+  font-size: 3em;
+  line-height: 45pt;
+  text-align: right;
+  padding-right: 8pt;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  opacity: 1;
+}
+
+div.timeline-year.year-range {
+  white-space: nowrap;
+  left: -35pt;
+}
+
+div.timeline-year.month-year {
+  white-space: nowrap;
+  left: -22pt;
+}
+
+div.timeline-year.frequent {
+  white-space: nowrap;
+  left: -12pt;
+}
+
+.award {
+  font-size: 1.1em;
+  letter-spacing: -.02em;
+  color: #284779;
+}
+
+.highlight-award {
+	background-color: #efefef;
+	-webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.highlight-award::before {
+	content: '\25B7'; /* \00a0 */
+	display: inline-block;
+  margin-left: -4pt;
+}
+
+.highlight-award > .award {
+  margin-left: -8pt;
+  font-weight: bold;
+}
+
+
+div.image-row > .col-md-3 {
+  height: 180px;
+  overflow: hidden;
+}
+
+div.image-row > .col-md-4 {
+  height: 140px;
+  overflow: hidden;
+}
+
+div.image-row > .col-md-3 img,
+div.image-row > .col-md-4 img,
+div.image-row > img {
+  height: 100%;
+  width: 100%;
+	object-fit: cover;
+}
+
+div.image-row > div.floating-right {
+  position: relative;
+  width: 20%;
+  display: block;
+  margin-bottom: -200px;
+}
+
+div.image-row > div.floating-right.first {
+  top: 50px;
+  left: 60%;
+}
+
+div.image-row > div.floating-right.second {
+  top: 120px;
+  left: 78%;
+}
+
+div.image-row > div.floating-right.third {
+  top: 30px;
+  left: 55%;
+  width: 35%;
+}
+
+div.image-row > div.floating-right.third > img {
+  border-radius: 50%;
+}
+
+div.image-row > div.floating-right > img {
+  width: 100%;
+}
 
 /* Contact */
 
@@ -675,6 +814,7 @@ img.staff-moving-image {
 		background-size: 325px;
   	background-repeat: no-repeat!important;
 		background-position: top left;
+		margin-left: 0;
 	}
 	
 	/* Indv Projects */
@@ -710,6 +850,7 @@ img.staff-moving-image {
   	background-repeat: no-repeat!important;
 		background-position: top left;
 		margin-bottom:0;
+		margin-left: 0;
 	}
 	
 	/* Indv Projects */
@@ -744,6 +885,7 @@ img.staff-moving-image {
   	background-repeat: no-repeat!important;
 		background-position: top left;
 		margin-bottom:0;
+		margin-left: 0;
 	}
 	
 	/* Indv Projects */
@@ -776,6 +918,7 @@ img.staff-moving-image {
   	background-repeat: no-repeat!important;
 		background-position: top left;
 		margin-bottom:0;
+		margin-left: 0;
 	}
 
 	.container {
@@ -812,6 +955,7 @@ img.staff-moving-image {
   	background-repeat: no-repeat!important;
 		background-position: top left;
 		margin-bottom:0;
+		margin-left: 0;
 	}
 	
 	div.project-summary {
@@ -861,6 +1005,7 @@ img.staff-moving-image {
   	background-repeat: no-repeat!important;
 		background-position: top left;
 		margin-bottom:0;
+		margin-left: 0;
 	}
 	
 	.portrait {
