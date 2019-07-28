@@ -996,6 +996,14 @@ img.staff-moving-image {
 		top: 1.1rem!important;
 	}
 	
+	#header .header-nav-main nav > ul > li.dropdown .dropdown-menu li a {
+    font-size: 1.2em;
+  }
+  
+  #header .header-nav.header-nav-line:not(.header-nav-light-text) nav > ul > li > a {
+    font-size: 1.6em;
+  }
+	
 	.bsd-logo {
   	width: 300px;
   	height: 50px;
@@ -1023,6 +1031,10 @@ img.staff-moving-image {
 		font-weight: bolder;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 		line-height: 33pt;
+	}
+	
+	div.col-md-12 ul li {
+		text-align: left;
 	}
 	
 	div.project-indv {
@@ -1114,7 +1126,15 @@ img.staff-moving-image {
 	
 	#header .header-logo {
 		top: 1.4rem!important;
-	}
+	}	
+		
+	#header .header-nav-main nav > ul > li.dropdown .dropdown-menu li a {
+    font-size: 1.2em;
+  }
+  
+  #header .header-nav.header-nav-line:not(.header-nav-light-text) nav > ul > li > a {
+    font-size: 1.6em;
+  }
 	
 	.bsd-logo {
   	width: 275px;
@@ -1160,6 +1180,10 @@ img.staff-moving-image {
 		font-weight: bolder;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 		line-height: 33pt;
+	}
+		
+	div.col-md-12 ul li {
+		text-align: left;
 	}
 	
 	div.project-indv {
