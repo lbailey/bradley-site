@@ -163,6 +163,16 @@ and you should see it successfully display the website!
 ## Heroku
 
 
+Refresh HTTPS Certificates from CLI
+```
+heroku certs:auto:refresh --app bradley-site
+```
+
+Tail logs from CLI
+```
+heroku logs -t --app bradley-site
+```
+
 ## License
 
 
