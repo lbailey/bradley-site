@@ -61,8 +61,8 @@ try {
 	$mail->SMTPAuth = true;                                  // Enable SMTP authentication
 	$mail->Username = 'lcbayleaf@gmail.com';                    // SMTP username
 	$mail->Password = 'smtpPassword';                              // SMTP password
-	$mail->SMTPSecure = 'ssl';                               // Enable encryption, 'ssl' also accepted
-	$mail->Port = 465;   								       // TCP port to connect to
+	$mail->SMTPSecure = 'tls';                               // Enable encryption, 'ssl' also accepted
+	$mail->Port = 587;   								       // TCP port to connect to
 
 	$mail->AddAddress($email);	 						       // Add another recipient
 
